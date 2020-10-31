@@ -1,0 +1,37 @@
+{
+  "name": "E-Commerce-Backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix e-commerce-frontend",
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix e-commerce-frontend",
+    "dev": "concurrently \"npm run server\" \"npm run  client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-validator": "^6.6.1",
+    "formidable": "^1.2.2",
+    "helmet": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.8",
+    "nodemailer": "^6.4.13",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}

@@ -1,0 +1,376 @@
+@font-face {
+  font-family: vazir-font;
+  src: url("./vazir-font-v18.0.0/Vazir.eot");
+  src: url("./vazir-font-v18.0.0/Vazir.eot?#iefix")
+      format("vazir-font-opentype"),
+    url("./vazir-font-v18.0.0/Vazir.eot") format("woff"),
+    url("./vazir-font-v18.0.0/Vazir.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  --primary: #9b59b6;
+  --secondary: #2c3e50;
+  --grey: #95a5a6;
+  --blue: #3498db;
+  --yellow: #f1c40f;
+  --pink: #ff6b81;
+  --red: #ff3838;
+  --bg-saturation: 50%;
+  --bg-lightness: 40%;
+  --bg-hue1: 340;
+  /* set angles for the tint and shade gradients */
+  --bg-tint-angle: -20deg;
+  --bg-shade-angle: -110deg;
+  /* set amounts for default tint & shade */
+  --bg-tint-amount: 20%;
+  --bg-shade-amount: 20%;
+  /* set indiviidual hues for the tint and shade */
+  /* defaults are set by higher-level arguments…
+         which alows for both simpler & more customized uses*/
+  --bg-tint-hue: var(--bg-hue);
+  --bg-shade-hue: var(--bg-hue);
+  /* set the gradient positions all at once */
+  --bg-gradient-stops: 30%;
+  /* override tint/shade gradients directly */
+  --bg-tint-start: var(--bg-gradient-stops);
+  --bg-tint-end: var(--bg-tint-start);
+  --bg-shade-start: var(--bg-gradient-stops);
+  --bg-shade-end: var(--bg-shade-start);
+  /* override tint/shade saturation & lightness directly */
+  --bg-tint-saturation: var(--bg-saturation);
+  --bg-tint-lightness: calc(var(--bg-lightness) + var(--bg-tint-amount));
+  --bg-shade-saturation: var(--bg-saturation);
+  --bg-shade-lightness: calc(var(--bg-lightness) - var(--bg-shade-amount));
+  /* or override any individual color directly */
+  --bg-color: hsl(var(--bg-hue), var(--bg-saturation), var(--bg-lightness));
+  --bg-tint: hsla(
+    var(--bg-tint-hue),
+    var(--bg-tint-saturation),
+    var(--bg-tint-lightness),
+    0.25
+  );
+  --bg-shade: hsla(
+    var(--bg-shade-hue),
+    var(--bg-shade-saturation),
+    var(--bg-shade-lightness),
+    0.25
+  );
+  /* this is the internal logic that creates your angled tint/shade background */
+  --bg-image: linear-gradient(
+      var(--bg-tint-angle),
+      var(--bg-tint) var(--bg-tint-start),
+      transparent var(--bg-tint-end)
+    ),
+    linear-gradient(
+      var(--bg-shade-angle),
+      var(--bg-shade) var(--bg-shade-start),
+      transparent var(--bg-shade-end)
+    );
+  /* Creating a final "output" variable acts like a function return */
+  --bg: var(--bg-image) var(--bg-color);
+  /* Applying that value to a property creates a mixin */
+  /* Since the initial return is invalid, nothing happens unless we set a --bg-hue */
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: vazir-font;
+  direction: rtl;
+}
+
+.app {
+  background: var(--bg);
+  --bg-lightness: 40%;
+  --bg-hue: 270;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 15px 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blank-space-60 {
+  padding-top: 60px;
+}
+
+.blank-space-120 {
+  padding-top: 120px;
+}
+
+.blank-space-40 {
+  padding-top: 40px;
+}
+
+.blank-space-20 {
+  padding-top: 20px;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  margin: 0;
+}
+
+/* main {
+    width: 100%;
+    --bg-hue: 270;
+    --bg-lightness: 40%;
+    background: var(--bg);
+  } */
+
+.shop-button {
+  background-color: var(--yellow);
+  opacity: 0.7;
+  border: 0;
+  padding: 8px 15px;
+  border-radius: 7px;
+  font-family: vazir-font;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
+.shop-button:hover {
+  opacity: 0.8;
+}
+
+.shop-button a {
+  color: var(--secondary);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.input {
+  padding: 15px 25px;
+  border-radius: 3px;
+  border: 0;
+  background: var(--bg);
+  --bg-hue: 60;
+  --bg-lightness: 80%;
+  max-width: 500px;
+  width: 100%;
+  direction: rtl;
+}
+
+.input::placeholder {
+  font-family: vazir-font;
+  color: var(--secondary);
+  font-size: 16px;
+}
+
+.go-back {
+  width: 90%;
+  margin: 10px auto;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.go-back a {
+  color: #fff;
+  background: var(--blue);
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+.input.invalid {
+  /* background: hsla(0, 60%, 50%, 1); */
+  box-shadow: 0 0 5px 2px rgba(228, 8, 8, 0.856);
+}
+
+.validation {
+  color: red;
+  text-shadow: 0 0 2px var(--pink);
+}
+
+.line {
+  width: 90%;
+  border-bottom: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.table-line {
+  width: 25%;
+  border-bottom: 1px solid #ddd;
+  /* margin: 10px 0; */
+  display: flex;
+}
+
+.new-price {
+  color: var(--yellow);
+  font-size: 18px;
+  margin: 10px;
+  /* padding: 10px 0; */
+  display: block;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-us-icon.custom-black {
+  box-shadow: 0 0 0 10px #0b1622, 10px 0 0 5px var(--yellow),
+    -10px 0 0 5px var(--yellow);
+  margin-top: 20px;
+}
+
+.contact-us-icon.custom-cream {
+  box-shadow: 0 0 0 10px #e7e7b7, 10px 0 0 5px var(--yellow),
+    -10px 0 0 5px var(--yellow);
+  margin: 10px 0;
+}
+
+.contact-us-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--yellow);
+  opacity: 0.95;
+}
+
+.products-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.products-header .header-title h1 {
+  color: #fff;
+  font-size: 35px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: minmax(100px, 200px) auto minmax(100px, 200px);
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.header-title h1::before,
+.header-title h1::after {
+  content: "";
+  display: block;
+  height: 10px;
+  background: linear-gradient(to left, var(--yellow), transparent);
+  width: 1;
+  opacity: 0.8;
+  margin: 0 10px;
+}
+
+.header-title h1::before {
+  background: linear-gradient(to right, var(--yellow), transparent);
+}
+
+.notif {
+  max-width: 350px;
+  width: 100%;
+  background: var(--bg);
+  --bg-hue: 210;
+  --bg-lightness: 5%;
+  color: #fff;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  opacity: 0;
+  z-index: -1000;
+  transition: opacity 0.3s;
+  border-radius: 5px;
+}
+
+.notif::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 5%;
+  top: -5%;
+  width: 30px;
+  height: 30px;
+  background: inherit;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.notif.show {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.notif .notif-content {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.notif-content .message {
+  font-size: 16px;
+}
+
+.product-image img {
+  width: 100%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.loading {
+  animation: loading 0.7s infinite forwards;
+}
+
+.loadMore {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(-3px);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(-3px);
+  }
+}

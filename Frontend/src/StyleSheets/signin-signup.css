@@ -1,0 +1,107 @@
+#signup {
+  width: 100%;
+}
+
+.signup .signup-content,
+.signin .signin-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.forget .forget-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.reset .reset-content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: table;
+  width: 80%;
+  margin: 0 auto;
+}
+
+form .input-group {
+  display: table-row;
+  position: relative;
+}
+
+.input-group label {
+  display: table-cell;
+  font-size: 16px;
+  color: #fff;
+  width: 250px;
+  text-align: center;
+}
+
+.input-group .input {
+  margin: 20px 0;
+  display: inline-block;
+  display: table-cell;
+  font-size: 20px;
+  color: #000;
+  font-family: vazir-font;
+}
+
+.button-group {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.register-option {
+  text-align: center;
+}
+
+.register-option a {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+.register-option a:hover {
+  color: #fff;
+}
+
+.button-group .register-button {
+  position: relative;
+  font-size: 18px;
+  padding: 15px 25px;
+}
+
+.login-option {
+  text-align: center;
+}
+
+.login-option a {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+.login-option a:hover {
+  color: #fff;
+}
+
+.button-group .login-button {
+  position: relative;
+  font-size: 18px;
+  padding: 15px 25px;
+}
+
+@media (max-width: 1092px) {
+  .input-group label {
+    display: table-row;
+  }
+  .input-group input {
+    display: table-row;
+    padding: 5px 15px;
+  }
+  .button-group {
+    text-align: unset;
+  }
+}

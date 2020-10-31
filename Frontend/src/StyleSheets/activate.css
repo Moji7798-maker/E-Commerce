@@ -1,0 +1,50 @@
+#activation {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.activation-content {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.activation-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resend-email button {
+  text-decoration: underline;
+  color: var(--grey);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: vazir-font;
+}
+
+.resend-email button:disabled:hover {
+  user-select: none;
+  color: var(--grey);
+  cursor: not-allowed;
+}
+
+.resend-email button:hover {
+  color: #fff;
+}
+
+.activation-button {
+  color: #fff;
+  padding: 20px 35px;
+  font-size: 18px;
+}
+
+@media (max-width: 476px) {
+  .activation-button {
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}

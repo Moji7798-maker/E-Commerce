@@ -1,0 +1,265 @@
+#product-details-section {
+  width: 80%;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.product-details-section > .content {
+  /* padding: 20px; */
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-details-top {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.product-details-top .product-pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+  max-width: 250px;
+  width: 100%;
+}
+
+.product-pic .main-pic {
+  max-width: 250px;
+  width: 100%;
+}
+
+.main-pic img {
+  width: 100%;
+}
+
+.product-pic > div {
+  display: flex;
+  justify-content: center;
+}
+
+.product-pic > div > .product-image {
+  margin: 0 10px;
+}
+
+.product-details-pics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  max-width: 500px;
+  width: 100%;
+}
+
+.product-details-pics .owl-stage {
+  width: 100%;
+}
+
+.gallery.big a {
+  max-width: 250px;
+  width: 100%;
+}
+
+.product-details-pics img {
+  width: 100%;
+}
+
+.product-details-top .product-info {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.product-info .row {
+  width: 80%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+.product-info .row-1 .product-title {
+  font-size: 30px;
+}
+
+.stars .star {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  display: inline-block;
+  background-color: rgba(127, 127, 127, 1);
+  clip-path: polygon(
+    50% 0%,
+    63% 38%,
+    100% 38%,
+    69% 59%,
+    82% 100%,
+    50% 75%,
+    18% 100%,
+    31% 59%,
+    0% 38%,
+    37% 38%
+  );
+  transition: background 0.3s;
+}
+
+.stars .star.selected {
+  background-color: red;
+}
+
+.stars .star:hover {
+  background-color: red;
+}
+
+.product-info .row-2 .prices {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+}
+
+.product-info .row-2 .prices .old-price {
+  color: var(--grey);
+  text-decoration: line-through;
+  margin: 0 0 0 10px;
+}
+
+.product-info .row-2 .prices .new-price {
+  color: var(--yellow);
+}
+
+.discount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.discount span.shade {
+  background-color: red;
+  opacity: 0.6;
+  padding: 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+.discount span.discount-percentage-product-item {
+  background-color: red;
+  opacity: 0.8;
+  padding: 3px;
+  border-radius: 0 3px 3px 0;
+}
+
+.add-to-cart-button {
+  color: #fff;
+  padding: 10px 12px;
+  font-size: 16px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.favorite:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.product-details-bottom {
+  padding: 10px 20px;
+}
+
+.product-details-bottom p {
+  line-height: 2;
+  font-size: 16px;
+}
+
+.carousel-item-pic {
+  max-width: 150px;
+  width: 100%;
+}
+
+#related-products-section {
+  width: 100%;
+}
+.related-products-section .content {
+  width: 80%;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.owl-carousel .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-item-pic img {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .product-details-top {
+    flex-direction: column;
+  }
+
+  .product-details-top .product-pic {
+    flex: 1;
+    width: 100%;
+    align-self: center;
+  }
+
+  .product-details-top .product-info {
+    flex: 1;
+  }
+
+  .product-details-top .product-pic .main-pic {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .product-info .row-2 .prices {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 568px) {
+  .product-info .row-3 .prices .new-price {
+    font-size: 14px;
+  }
+
+  .product-info .row-1 .product-title {
+    font-size: 22px;
+  }
+
+  .product-info .row-1 {
+    width: 100%;
+  }
+
+  .product-info .row-2 {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-info .row-3 {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .stars .star {
+    width: 12px;
+    height: 12px;
+  }
+}
