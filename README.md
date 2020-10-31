@@ -3,7 +3,7 @@
 # npm install
 run this command to install the server dependencies
 
-# npm client-install
+# npm run client-install
 run this command to install the clinet dependencies
 
 # npm run dev
